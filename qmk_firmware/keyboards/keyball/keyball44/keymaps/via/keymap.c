@@ -253,7 +253,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [4] = LAYOUT_universal(
     _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  , _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  , KC_MY_BTN1, KC_MY_BTN3 ,KC_MY_BTN2, _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  , KC_BTN1, KC_BTN3 ,KC_BTN2, _______  , _______  ,
     _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  , _______  , _______  , _______  , _______  , _______  ,
                   _______  , _______  , _______  ,        _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
   )
@@ -265,16 +265,16 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     // Auto enable scroll mode when the highest layer is 3
     keyball_set_scroll_mode(get_highest_layer(state) == 3);
 
-    uint8_t layer = biton32(state);
-    switch (layer)
-    {
-    case 4:
-      rgblight_sethsv(HSV_WHITE);
-      break;
+    // uint8_t layer = biton32(state);
+    // switch (layer)
+    // {
+    // case 4:
+    //   rgblight_sethsv(HSV_WHITE);
+    //   break;
 
-    default:
-      rgblight_sethsv(HSV_OFF);
-    }
+    // default:
+    //   rgblight_sethsv(HSV_OFF);
+    // }
 
     return state;
 }
