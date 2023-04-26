@@ -40,7 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define KEYBALL_CPI_DEFAULT 600
 
 // #define HOLD_ON_OTHER_KEY_PRESS
-#define TAPPING_TERM 50
+#define TAPPING_TERM 200
 
 #define KEYBALL_SCROLLSNAP_ENABLE 0
 
