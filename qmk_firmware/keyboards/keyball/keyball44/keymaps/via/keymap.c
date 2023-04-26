@@ -32,7 +32,9 @@ enum custom_keycodes
 {
   KC_MY_BTN1 = KEYBALL_SAFE_RANGE, // Remap上では 0x5DAF
   KC_MY_BTN2,                      // Remap上では 0x5DB0
-  KC_MY_BTN3                       // Remap上では 0x5DB1
+  KC_MY_BTN3,                       // Remap上では 0x5DB1
+  KC_MY_BTN4,                       // Remap上では 0x5DB2
+  KC_MY_BTN5                        // Remap上では 0x5DB3
 };
 
 enum click_state
@@ -46,7 +48,7 @@ enum click_state
 enum click_state state; // 現在のクリック入力受付の状態 Current click input reception status
 uint16_t click_timer;   // タイマー。状態に応じて時間で判定する。 Timer. Time to determine the state of the system.
 
-uint16_t to_reset_time = 500; // この秒数(千分の一秒)、CLICKABLE状態ならクリックレイヤーが無効になる。 For this number of seconds (milliseconds), the click layer is disabled if in CLICKABLE state.
+uint16_t to_reset_time = 800; // この秒数(千分の一秒)、CLICKABLE状態ならクリックレイヤーが無効になる。 For this number of seconds (milliseconds), the click layer is disabled if in CLICKABLE state.
 
 const int16_t to_clickable_movement = 0; // クリックレイヤーが有効になるしきい値
 const uint16_t click_layer = 4;           // マウス入力が可能になった際に有効になるレイヤー。Layers enabled when mouse input is enabled
@@ -107,6 +109,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
   case KC_MY_BTN1:
   case KC_MY_BTN2:
   case KC_MY_BTN3:
+  case KC_MY_BTN4:
+  case KC_MY_BTN5:
   {
     report_mouse_t currentReport = pointing_device_get_report();
 
@@ -248,12 +252,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [4] = LAYOUT_universal(
-      _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  , _______  , _______  , _______  , _______  , _______  ,
-      _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  ,KC_MY_BTN1, _______  ,KC_MY_BTN2, _______  , _______  ,
-      _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  , _______  , _______  , _______  , _______  , _______  ,
-                    _______  , _______  , _______  ,        _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
-    )
-  
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  , _______  , _______  , _______  , _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  , KC_MY_BTN1, KC_MY_BTN3 ,KC_MY_BTN2, _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                        _______  , _______  , _______  , _______  , _______  , _______  ,
+                  _______  , _______  , _______  ,        _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
+  )
+
 };
 // clang-format on
 
