@@ -18,10 +18,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 #include "quantum.h"
-#include "features/my_functions.h"
-#include "features/swipe_gesture.h"
-#include "features/auto_click_layer.h"
-#include "features/my_macro_keys.h"
+// #include "features/my_functions.h"
+// #include "features/swipe_gesture.h"
+// #include "features/auto_click_layer.h"
+// #include "features/my_macro_keys.h"
 
 
 // clang-format off
