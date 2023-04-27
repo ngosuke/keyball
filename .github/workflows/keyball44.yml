@@ -24,8 +24,8 @@ jobs:
     - name: Install a link to own source
       run: ln -s $(pwd)/qmk_firmware/keyboards/keyball __qmk__/keyboards/keyball
 
-    - run: qmk compile -j 4 -kb keyball/keyball61 -km mykeymap
-      continue-on-error: true
+    # - run: qmk compile -j 4 -kb keyball/keyball61 -km mykeymap
+    #   continue-on-error: true
 
     - run: qmk compile -j 4 -kb keyball/keyball44 -km default
 

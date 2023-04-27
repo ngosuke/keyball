@@ -1,4 +1,7 @@
-// 自前の絶対数を返す関数。 Functions that return absolute numbers.
+/*
+自前の絶対数を返す関数。 Functions that return absolute numbers.
+*/
+
 int16_t my_abs(int16_t num)
 {
   if (num < 0)
@@ -85,7 +88,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
   }
 
   return true;
-}
+}}
 
 
 /* Copyright 2023 kamidai (@d_kamiichi)
